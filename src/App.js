@@ -1,12 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
+import ToDo from './components/toDo';
+import DragComponent from './components/dragComponent';
+import DragHorizontal from './components/dragHorizontal'
+
+
 function App() {
+
+  const [showDrag, setShowDrag] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      
+      {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,7 +25,21 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <div>React DragDrop</div>
+      <div className={`showBtn`}>
+        <button onClick={() => setShowDrag(!showDrag)}>Toggle Drag Component</button>
+      </div>
+      {/* <ToDo /> */}
+      {
+        showDrag ? 
+        <div className="customApp">
+          <DragHorizontal />
+        </div> : 
+        <div className="customApp">
+          <DragComponent />
+        </div>
+      }
     </div>
   );
 }

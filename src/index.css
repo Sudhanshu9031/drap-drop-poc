@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.todoContainer {
+  border: 1px solid #c0c0c0;
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+
+.actionBtn {
+  text-align: right;
+}
